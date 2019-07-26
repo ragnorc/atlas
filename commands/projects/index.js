@@ -1,21 +1,29 @@
 import React from 'react';
 import {render} from 'ink';
 import SelectInput from 'ink-select-input';
+import Add from './add'
+import Remove from './remove'
 
 const Projects = () => {
 	const handleSelect = item => {
-		// `item` = { label: 'First', value: 'first' }
+
+		if (item.value === undefined) {
+            console.log("Error retrieving component.")
+          }
+          else {
+              
+               render(<item.value/>)
+          }
 	};
 
 	const items = [{
-		label: 'First',
-		value: 'first'
+        key: "add-project",
+		label: 'Add a project',
+		value: Add
 	}, {
-		label: 'Second',
-		value: 'second'
-	}, {
-		label: 'Third',
-		value: 'third'
+		key: 'remove-project',
+        label: 'Remove a project',
+        value: Remove
 	}];
 
 	return <SelectInput items={items} onSelect={handleSelect}/>
@@ -23,4 +31,5 @@ const Projects = () => {
 
 render(<Projects/>);
 
+export {Projects, Add, Remove}
 export default Projects

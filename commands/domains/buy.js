@@ -34,14 +34,6 @@ const Buy = ({domainName}) => {
     }
 
     else {
-         /*const child = cp.spawn('wc');
-
-         process.stdin.pipe(child.stdin)
-
-        child.stdout.on('data', (data) => {
-         console.log(`child stdout:\n${data}`);
-            });
-            */
 
     execa.command('now domain buy '+domainName,{ stdio: 'inherit'})
         

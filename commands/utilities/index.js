@@ -1,9 +1,9 @@
 import React from 'react';
 import {render, Text} from 'ink';
 import SelectInput from 'ink-select-input'; 
-import Buy from './buy'
+import PubKey from './pubkey'
 
-const Domains = () => {
+const Utilities = () => {
 	const handleSelect = item => {
 		if (item.value === undefined) {
           console.log("Error retrieving component.")
@@ -15,16 +15,16 @@ const Domains = () => {
 	};
 	const items = [
 		{
-			key: "buy-domain",
-			label: "Buy a domain",
-			value: Buy
+			key: "get-ssh-key",
+			label: "Copy SSH public key to clipboard",
+			value: PubKey
 		}
 	]
 
 	return <SelectInput items={items} onSelect={handleSelect}/>
 };
 
-render(<Domains/>);
+render(<Utilities/>);
 
-export {Buy, Domains}
-export default Domains
+export {Utilities, PubKey}
+export default Utilities

@@ -1,8 +1,10 @@
 import React from 'react';
 import {render, Text} from 'ink';
 import SelectInput from 'ink-select-input'; 
-import Projects from './projects'
-import Domains from './domains'
+import * as Projects from './projects'
+import * as Domains from './domains'
+import * as Utilities from './utilities'
+import All from './all'
 
 const Menu = () => {
 	const handleSelect = item => {
@@ -19,14 +21,24 @@ const Menu = () => {
 
 	const items = [
 		{
+			key: "all",
+			label: "Show all commands",
+			value: All
+		},
+		{
 			key: "projects",
 			label: "Projects",
-			value: Projects
+			value: Projects.Projects
 		},
 		{
 			key: "domains",
 			label: "Domains",
-			value: Domains
+			value: Domains.Domains
+		},
+		{
+			key: "utilities",
+			label: "Utilities",
+			value: Utilities.Utilities
 		}
 	]
 	
