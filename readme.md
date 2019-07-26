@@ -1,4 +1,4 @@
-# Atlas - My personal CLI
+# Atlas - My Personal CLI
 
 > Atlas is built with Ink and Pastel and automates my repetitive tasks behind an easy-to-use CLI.
 
@@ -16,7 +16,6 @@ $ npm install -g atlas-ragnor
 
 ```
 $ atlas-ragnor --help
-atlas
 
 ```
 
