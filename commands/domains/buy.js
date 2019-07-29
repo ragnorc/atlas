@@ -1,59 +1,43 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {render, Text, Box} from 'ink';
-import SelectInput from 'ink-select-input'; 
-import * as cp from 'child_process'
-import {UncontrolledTextInput} from 'ink-text-input';
-import { exists } from 'fs';
-const execa = require('execa');
+import React from "react";
+import PropTypes from "prop-types";
+import { render, Text, Box } from "ink";
+import SelectInput from "ink-select-input";
+import * as cp from "child_process";
+import { UncontrolledTextInput } from "ink-text-input";
+import { exists } from "fs";
+const execa = require("execa");
 
-const Buy = ({domainName}) => {
-
-    const handleSubmit = domainName => {
-        execa.command('now domain buy '+domainName, { stdio: 'inherit'})
-        app.unmount()
-        
+const Buy = ({ domainName }) => {
+	const handleSubmit = domainName => {
+		render(<Text>Contacting Zeit Domains ...</Text>);
+		execa.command("now domain buy " + domainName, {
+			shell: true,
+			stdio: "inherit"
+		});
 	};
 
+	if (domainName === undefined) {
+		return (
+			<Box>
+				<Box marginRight={1}>Enter the domain name you want to buy:</Box>
 
-    if (domainName === undefined)
-    {
-        return (
-
-            <Box>
-			<Box marginRight={1}>
-				Enter the domain name you want to buy:
+				<UncontrolledTextInput onSubmit={handleSubmit} />
 			</Box>
+		);
+	} else {
+		execa.command("now domain buy " + domainName, {
+			shell: true,
+			stdio: "inherit"
+		});
 
-			<UncontrolledTextInput onSubmit={handleSubmit}/>
-		</Box>
-
-        )
-
-        
-    }
-
-    else {
-
-    execa.command('now domain buy '+domainName,{ stdio: 'inherit'})
-        
-    
-
-    return <Text>{domainName}</Text>
-    
-
-    }
-
-	
+		return <Text>{domainName}</Text>;
+	}
 };
 
 Buy.propTypes = {
-	domainName: PropTypes.string,
+	domainName: PropTypes.string
 };
 
-Buy.positionalArgs = ['domainName']
+Buy.positionalArgs = ["domainName"];
 
-const app = render(<Buy/>);
-
-
-export default Buy
+export default Buy;
