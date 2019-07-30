@@ -3,6 +3,7 @@ import { render, Text } from "ink";
 import SelectInput from "ink-select-input";
 import startDevEngine from "./startDevEngine";
 import stopDevEngine from "./stopDevEngine";
+import Git from "./git";
 
 const Development = () => {
 	const handleSelect = item => {
@@ -13,6 +14,11 @@ const Development = () => {
 		}
 	};
 	const items = [
+		{
+			key: "git",
+			label: "Git",
+			value: Git
+		},
 		{
 			key: "start-dev-engine",
 			label: "Start development engine",
@@ -28,5 +34,5 @@ const Development = () => {
 	return <SelectInput items={items} onSelect={handleSelect} />;
 };
 
-export { Development, startDevEngine, stopDevEngine };
+export { Development, startDevEngine, stopDevEngine, Git };
 export default Development;
