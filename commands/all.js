@@ -36,6 +36,11 @@ const All = () => {
 			value: Utilities.PubKey
 		},
 		{
+			key: "get-wifi-key",
+			label: "Copy WiFi password to clipboard",
+			value: Utilities.WiFi
+		},
+		{
 			key: "start-dev-engine",
 			label: "Start development engine",
 			value: Development.startDevEngine
