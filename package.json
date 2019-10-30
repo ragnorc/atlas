@@ -1,30 +1,30 @@
 {
-	"name": "@ragnorc/atlas",
-	"version": "0.3.0",
-	"license": "MIT",
-	"bin": "./build/cli.js",
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/ragnorc"
-	},
-	"repository": "git://github.com/ragnorc/atlas.git",
-	"engines": {
-		"node": ">=8"
-	},
-	"scripts": {
-		"dev": "pastel dev",
-		"build": "pastel build",
-		"prepare": "pastel build"
-	},
-	"files": [
-		"build"
-	],
-	"dependencies": {
-		"execa": "^2.0.3",
-		"ink": "^2.3.0",
-		"ink-select-input": "^3.1.1",
-		"ink-text-input": "^3.2.0",
-		"pastel": "^1.0.3",
-		"prop-types": "^15.7.2",
-		"react": "^16.8.6"
-	}
+  "name": "@ragnorc/atlas",
+  "version": "0.3.1",
+  "license": "MIT",
+  "bin": "./build/cli.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/ragnorc"
+  },
+  "repository": "git://github.com/ragnorc/atlas.git",
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "dev": "pastel dev",
+    "build": "pastel build",
+    "prepare": "pastel build"
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "execa": "^2.0.3",
+    "ink": "^2.3.0",
+    "ink-select-input": "^3.1.1",
+    "ink-text-input": "^3.2.0",
+    "pastel": "^1.0.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6"
+  }
 }
