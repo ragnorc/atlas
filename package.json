@@ -1,8 +1,12 @@
 {
-	"name": "atlas-ragnor",
+	"name": "@ragnorc/atlas",
 	"version": "0.3.0",
 	"license": "MIT",
 	"bin": "./build/cli.js",
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/ragnorc"
+	},
+	"repository": "git://github.com/ragnorc/atlas.git",
 	"engines": {
 		"node": ">=8"
 	},
